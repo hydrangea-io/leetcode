@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problem;
 
 import leetcode.algorithm.TreeNode;
 

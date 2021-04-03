@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problem;
 
 /**
  * Given the head of a singly linked list, group all the nodes

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.problem;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
-import leetcode.LeetCode0328;
+import leetcode.problem.LeetCode0328;
 
 public class LeetCode0328Test {
 
