@@ -11,22 +11,19 @@ import leetcode.algorithm.TreeNode;
 public class LeetCode0129 {
 
     public int sumNumbers(TreeNode root) {
-        int d = maxDepth(root);
-        return calcSum(root, 0, d);
+        return calcSum(root, 0);
     }
 
-    private int calcSum(TreeNode root, int sum, int d) {
+    private int calcSum(TreeNode root, int sum) {
         if (root == null) { return 0; }
+        sum = sum * 10 + root.val;
         if (root.left == null && root.right == null) {
-            int totalSum = sum + root.val;
-            System.out.println("total sub sum: " + totalSum);
-            return sum + root.val;
+            return sum;
         }
-        int subSum = sum + root.val * (int) Math.pow(10, d);
-        return calcSum(root.left, subSum, d-1) + calcSum(root.right, subSum, d-1);
+        return calcSum(root.left, sum) + calcSum(root.right, sum);
     }
 
-    private int maxDepth(TreeNode root) {
+    public int maxDepth(TreeNode root) {
         if (root == null) { return 0; }
         if (root.left == null && root.right == null) { return 0; }
         return Math.max(maxDepth(root.left) + 1, maxDepth(root.right) + 1);
