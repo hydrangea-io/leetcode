@@ -18,11 +18,12 @@ public class LeetCode0129 {
     private int calcSum(TreeNode root, int sum, int d) {
         if (root == null) { return 0; }
         if (root.left == null && root.right == null) {
+            int totalSum = sum + root.val;
+            System.out.println("total sub sum: " + totalSum);
             return sum + root.val;
         }
-        int subSum = sum + root.val*10;
-        System.out.println("SubSum: " + subSum);
-        return calcSum(root.left, subSum) + calcSum(root.right, subSum);
+        int subSum = sum + root.val * (int) Math.pow(10, d);
+        return calcSum(root.left, subSum, d-1) + calcSum(root.right, subSum, d-1);
     }
 
     private int maxDepth(TreeNode root) {
