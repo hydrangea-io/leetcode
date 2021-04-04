@@ -12,6 +12,35 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
+
+  <build>
+    <testResources>
+        <testResource>
+            <directory>src/test/java</directory>
+            <excludes>
+                <exclude>**/*.java</exclude>
+            </excludes>
+        </testResource>
+    </testResources>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+                <encoding>UTF-8</encoding>
+                <source>1.8</source>
+                <target>1.8</target>
+                <compilerArgument>-Werror</compilerArgument>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+        </plugin>            
+    </plugins>        
+</build>       
  
   <dependencies>
     <dependency>
